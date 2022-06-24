@@ -1,0 +1,61 @@
+<div appBsModal #createModal="bs-modal" (onShown)="onShown()" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="createModal" aria-hidden="true" [config]="{backdrop: 'static', keyboard: !saving}">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <form #vehicleCreateForm="ngForm" role="form" novalidate class="form-validation" *ngIf="active"
+                (submit)="save()">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <span>{{"CreateNewvehicle" | localize}}</span>
+                    </h5>
+                    <button type="button" class="close" (click)="close()" [attr.aria-label]="l('Close')"
+                        [disabled]="saving">
+                         <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Manufacturer">{{"Manufacturer" | localize}} *</label>
+                        <input id="Manufacturer" #manufacturerInput="ngModel" type="text" name="Manufacturer" class="form-control"
+                            [(ngModel)]="vehicle.manufacturer" required>
+                        <validation-messages [formCtrl]="manufacturerInput"></validation-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="Model">{{"Model" | localize}} *</label>
+                        <input id="Model" #modelInput="ngModel" type="text" name="Model" class="form-control"
+                            [(ngModel)]="vehicle.model" required maxlength="128">
+                        <validation-messages [formCtrl]="modelInput"></validation-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="PlateNumber">{{"PlateNumber" | localize}} *</label>
+                        <input id="PlateNumber" #plateNumberInput="ngModel" type="text" name="PlateNumber" class="form-control"
+                            [(ngModel)]="vehicle.plateNumber" required maxlength="128">
+                        <validation-messages [formCtrl]="plateNumberInput"></validation-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductionYear">{{"ProductionYear" | localize}} *</label>
+                        <input id="ProductionYear" #productionYearInput="ngModel" type="number" name="ProductionYear" class="form-control"
+                            [(ngModel)]="vehicle.productionYear" maxlength="6">
+                        <validation-messages [formCtrl]="productionYearInput"></validation-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">{{"Description" | localize}}</label>
+                      <textarea name="Description" #descriptionInput="ngModel" id="VehicleDescription" 
+                      class="form-control" [(ngModel)]="vehicle.description"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" [disabled]="saving" class="btn btn-light-primary font-weight-bold"
+                        (click)="close()">{{"Cancel" | localize}}</button>
+                    <button type="submit" [buttonBusy]="saving" [busyText]="l('SavingWithThreeDot')"
+                        class="btn btn-primary font-weight-bold"
+                        [disabled]="!vehicleCreateForm.form.valid || saving"><i
+                            class="fa fa-save"></i> <span>{{"Save" | localize}}</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
