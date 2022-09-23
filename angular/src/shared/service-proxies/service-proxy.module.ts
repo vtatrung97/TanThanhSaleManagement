@@ -5,6 +5,7 @@ import * as ApiServiceProxies from './service-proxies';
 import { ZeroRefreshTokenService } from '@account/auth/zero-refresh-token.service';
 import { ZeroTemplateHttpConfigurationService } from './zero-template-http-configuration.service';
 import { VehicleServiceProxy } from './vehicleService';
+import { ProductServiceProxy } from './productService';
 
 @NgModule({
     providers: [
@@ -55,6 +56,7 @@ import { VehicleServiceProxy } from './vehicleService';
         ApiServiceProxies.DynamicEntityPropertyValueServiceProxy,
         ApiServiceProxies.TwitterServiceProxy,
         VehicleServiceProxy,
+        ProductServiceProxy,
         { provide: RefreshTokenService, useClass: ZeroRefreshTokenService },
         { provide: AbpHttpConfigurationService, useClass: ZeroTemplateHttpConfigurationService },
         { provide: HTTP_INTERCEPTORS, useClass: AbpHttpInterceptor, multi: true }

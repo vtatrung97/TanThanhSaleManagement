@@ -64,6 +64,7 @@
 
               "src/app/shared/core.less",
               "src/app/shared/layout/layout.less",
+              "node_modules/devextreme/dist/css/dx.light.css",
               "src/styles.css"
             ],
             "scripts": [

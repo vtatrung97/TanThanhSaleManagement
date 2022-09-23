@@ -4,14 +4,16 @@ using Delta.SaleProject.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Delta.SaleProject.Migrations
 {
     [DbContext(typeof(SaleProjectDbContext))]
-    partial class SaleProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220923034841_Update_Vehicle_Tenant")]
+    partial class Update_Vehicle_Tenant
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

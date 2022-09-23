@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace Delta.SaleProject.Vehicles
 {
     [Table("Vehicles")]
-    public class Vehicle : FullAuditedEntity, IMustHaveTenant
+    public class Vehicle : FullAuditedEntity, IMayHaveTenant
     {
         public string PlateNumber { get; set; }
         public string Description { get; set; }
         public string Model { get; set; }
         public string Manufacturer { get; set; }
         public int ProductionYear { get; set; }
-        public int TenantId { get; set; }
+        public int? TenantId { get; set; }
     }
 }

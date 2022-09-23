@@ -789,5 +789,8 @@
     <text name="PlateNumber">Biển số xe</text>
     <text name="Description">Mô tả</text>
     <text name="CreateNewVehicle">Thêm mới phương tiện</text>
+    <text name="Vehicles">Phương tiện vận chuyển</text>
+    <text name="VehiclesHeaderInfo">Danh sách phương tiện vận chuyển</text>
+    <text name="IsGasTankShell">Là vỏ gas</text>
   </texts>
 </localizationDictionary>

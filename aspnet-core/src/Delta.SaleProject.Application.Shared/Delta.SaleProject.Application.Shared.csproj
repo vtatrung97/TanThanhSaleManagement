@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Delta.SaleProject.Core.Shared\Delta.SaleProject.Core.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Products\" />
+  </ItemGroup>
+
 </Project>

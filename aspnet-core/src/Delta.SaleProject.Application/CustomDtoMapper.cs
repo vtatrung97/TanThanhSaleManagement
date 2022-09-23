@@ -43,6 +43,8 @@ using Delta.SaleProject.Sessions.Dto;
 using Delta.SaleProject.WebHooks.Dto;
 using Delta.SaleProject.Vehicles;
 using Delta.SaleProject.Vehicles.Dtos;
+using Delta.SaleProject.Products.Dtos;
+using Delta.SaleProject.Products;
 
 namespace Delta.SaleProject
 {
@@ -168,6 +170,10 @@ namespace Delta.SaleProject
             /* ADD YOUR OWN CUSTOM AUTOMAPPER MAPPINGS HERE */
             configuration.CreateMap<CreateVehicleInput, Vehicle>();
             configuration.CreateMap<VehicleDto, Vehicle>();
+
+            configuration.CreateMap<CreateProductInput, Product>();
+            configuration.CreateMap<ProductDto, Product>();
+
         }
     }
 }

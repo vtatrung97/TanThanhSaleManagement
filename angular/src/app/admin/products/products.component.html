@@ -1,1 +1,35 @@
-<h1>Products Page</h1>
+<div [@routerTransition]>
+    <div class="content d-flex flex-column flex-column-fluid">
+        <sub-header [title]="'Products' | localize" [description]="'ProductsHeaderInfo' | localize">
+            <!-- <div role="actions">
+                
+            </div> -->
+        </sub-header>
+
+        <div [class]="containerClass">
+            <div class="card card-custom gutter-b">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <dx-data-grid
+                            id="gridContainer"
+                            [dataSource]="primengTableHelper.records"
+                            keyExpr="id"
+                            [remoteOperations]="false"
+                            [allowColumnReordering]="true"
+                            [rowAlternationEnabled]="true"
+                            [showBorders]="true"
+                            (onRowInserting)="insertRow($event)"
+                            (onRowRemoving)="validateRemove($event)">
+                            <dxo-editing mode="row" [allowAdding]="true" [allowUpdating]="true" [allowDeleting]="true">
+                            </dxo-editing>
+                            <dxi-column dataField="name" [caption]="l('Name')"></dxi-column>
+                            <dxi-column dataField="description" [caption]="l('Description')"></dxi-column>
+                            <dxi-column dataField="weight" [caption]="l('Weight')"></dxi-column>
+                            <dxi-column dataField="isGasTankSell" [caption]="l('IsGasTankShell')"></dxi-column>
+                        </dx-data-grid>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

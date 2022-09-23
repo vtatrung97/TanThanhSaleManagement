@@ -1,6 +1,6 @@
 {
-  "remoteServiceBaseUrl": "http://45.118.144.14:8088",
-  "appBaseUrl": "http://45.118.144.14:4800",
+  "remoteServiceBaseUrl": "http://222.252.23.17:8090",
+  "appBaseUrl": "http://222.252.23.17:4800",
   "localeMappings": {
     "angular": [
       {

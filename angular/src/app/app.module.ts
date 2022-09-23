@@ -70,7 +70,7 @@ import { NotificationsComponent } from './shared/layout/notifications/notificati
 import { TextMaskModule } from 'angular2-text-mask';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ActiveDelegatedUsersComboComponent } from './shared/layout/topbar/active-delegated-users-combo.component';
-
+import { DxButtonModule,DxDataGridModule } from 'devextreme-angular';
 // Metronic
 import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -169,7 +169,9 @@ import { SubheaderModule } from './shared/common/sub-header/subheader.module';
         AutoCompleteModule,
         NgxSpinnerModule,
         AppBsModalModule,
-        SubheaderModule
+        SubheaderModule,
+        DxButtonModule,
+        DxDataGridModule
     ],
     providers: [
         ImpersonationService,
