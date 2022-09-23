@@ -15,10 +15,18 @@ namespace Delta.SaleProject.Products
     public class ProductAppService : SaleProjectAppServiceBase, IProductAppService
     {
         private readonly IRepository<Product> _repository;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
         public ProductAppService(IRepository<Product> repository)
         {
             _repository = repository;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
         public async Task Create(CreateProductInput input)
         {
             try
@@ -59,13 +67,22 @@ namespace Delta.SaleProject.Products
             try
             {
                 Logger.Info("Getting a product with id: " + id);
+<<<<<<< HEAD
                 var exVehicle = await _repository.FirstOrDefaultAsync(id);
                 if (exVehicle == null)
+=======
+                var exProduct = await _repository.FirstOrDefaultAsync(id);
+                if (exProduct == null)
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
                 {
                     throw new UserFriendlyException(L("CouldNotFindTheTaskMessage"));
                 }
 
+<<<<<<< HEAD
                 return ObjectMapper.Map<ProductDto>(exVehicle);
+=======
+                return ObjectMapper.Map<ProductDto>(exProduct);
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
             }
             catch (Exception ex)
             {
@@ -74,14 +91,23 @@ namespace Delta.SaleProject.Products
             }
         }
 
+<<<<<<< HEAD
         public async Task<ListResultDto<ProductDto>> GetAll(GetAllProductsInput input)
+=======
+        public async Task<ListResultDto<ProductListDto>> GetAll(GetAllProductsInput input)
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
         {
             try
             {
                 Logger.Info("Get all products for input: " + input);
                 var products = await _repository.GetAll()
+<<<<<<< HEAD
                     .WhereIf(!string.IsNullOrEmpty(input.KeyWord), t => t.Description.Contains(input.KeyWord)).ToListAsync();
                 return new ListResultDto<ProductDto>(ObjectMapper.Map<List<ProductDto>>(products));
+=======
+                    .WhereIf(!string.IsNullOrEmpty(input.KeyWord), t => t.Name.Contains(input.KeyWord)).ToListAsync();
+                return new ListResultDto<ProductListDto>(ObjectMapper.Map<List<ProductListDto>>(products));
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
             }
             catch (Exception ex)
             {
@@ -90,7 +116,11 @@ namespace Delta.SaleProject.Products
             }
         }
 
+<<<<<<< HEAD
         public async Task Update(ProductDto input)
+=======
+        public async Task Update(UpdateProductInputDto input)
+>>>>>>> 3fae4b2902ff5906ba3d0861f3b76d3c21c1bad1
         {
             try
             {
